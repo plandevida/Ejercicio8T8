@@ -7,6 +7,9 @@
 //
 
 #include <iostream>
+#include "Consultorio.h"
+#include "Medico.h"
+#include "Paciente.h"
 
 int main(int argc, const char * argv[]) {
 

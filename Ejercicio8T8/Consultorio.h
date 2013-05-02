@@ -9,21 +9,74 @@
 #ifndef Ejercicio8T8_Consultorio_h
 #define Ejercicio8T8_Consultorio_h
 
-#include "Medico.h";
-#include "Paciente.h";
+#include "Medico.h"
+#include "Paciente.h"
+#include "Tabla.h"
+#include "Cola.h"
 
 class Consultorio {
   
 public:
     Consultorio() {
+        consultas = Tabla<Medico, Cola<Paciente>>();
+        pacientes = Cola<Paciente>();
+    }
+    
+    void nuevoMedico( const Medico &medicoNuevo) {
         
+        if ( ! consultas.esta(medicoNuevo) ) {
+            
+            consultas.inserta( medicoNuevo, Cola<Paciente>() );
+        }
+    }
+    
+    void pideConsulta( const Paciente &paciente) {
+        pacientes.ponDetras(paciente);
+    }
+    
+    void siguientePaciente( const Medico &medico ) {
+        
+        if ( consultas.esta(medico) ) {
+            
+            Cola<Paciente> pacientesMedico = consultas.consulta(medico);
+            pacientesMedico.ponDetras( pacientes.primero() );
+            
+            consultas.inserta(medico, pacientesMedico);
+            
+            pacientes.quitaPrim();
+        }
+    }
+    
+    void atiendeConsulta( const Medico &medico) {
+        
+        if ( consultas.esta(medico) ) {
+            
+            Cola<Paciente> pacientesMedico = consultas.consulta(medico);
+            
+            pacientesMedico.quitaPrim();
+            
+            consultas.inserta(medico, pacientesMedico);
+        }
+    }
+    
+    bool tienePacientes(const Medico &medico) {
+        
+        bool tiene = false;
+        
+        if ( consultas.esta(medico)) {
+            if ( consultas.consulta(medico).numElems() ) {
+                tiene = true;
+            }
+        }
+        
+        return tiene;
     }
     
 private:
     
-    Lista<Medico> medicos;
+    Tabla<Medico, Cola<Paciente>> consultas;
     
-    Lista<Paciente> pacientes;
+    Cola<Paciente> pacientes;
 };
 
 #endif

@@ -39,6 +39,9 @@
 		FBB0DC011732F63200E6FD04 /* Pila.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pila.h; sourceTree = "<group>"; };
 		FBB0DC021732F63200E6FD04 /* PilaLE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PilaLE.h; sourceTree = "<group>"; };
 		FBB0DC031732F63200E6FD04 /* Tabla.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tabla.h; sourceTree = "<group>"; };
+		FBB0DC041732F6CA00E6FD04 /* Consultorio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Consultorio.h; sourceTree = "<group>"; };
+		FBB0DC051732F6EE00E6FD04 /* Medico.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Medico.h; sourceTree = "<group>"; };
+		FBB0DC061732F6FA00E6FD04 /* Paciente.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Paciente.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,9 @@
 				FBB0DC011732F63200E6FD04 /* Pila.h */,
 				FBB0DC021732F63200E6FD04 /* PilaLE.h */,
 				FBB0DC031732F63200E6FD04 /* Tabla.h */,
+				FBB0DC041732F6CA00E6FD04 /* Consultorio.h */,
+				FBB0DC051732F6EE00E6FD04 /* Medico.h */,
+				FBB0DC061732F6FA00E6FD04 /* Paciente.h */,
 			);
 			name = headers;
 			sourceTree = "<group>";
